@@ -26,6 +26,7 @@ const scene = new THREE.Scene()
  * Textures
  */
 const textureLoader = new THREE.TextureLoader()
+const matcapTexture = textureLoader.load('/textures/matcaps/4.png')
 
 /**
  * Fonts
@@ -57,8 +58,8 @@ fontLoader.load(
         //     - (textGeometry.boundingBox.max.z - 0.03) * 0.5  // Subtract bevel thickness
         //   )
       textGeometry.center()
-      const textMaterial = new THREE.MeshBasicMaterial()
-      textMaterial.wireframe = true
+      const textMaterial = new THREE.MeshMatcapMaterial({matcap: matcapTexture})
+      textMaterial.wireframe = false
       const text = new THREE.Mesh(textGeometry, textMaterial)
       scene.add(text)
     }
