@@ -41,11 +41,11 @@ fontLoader.load(
         {
             font: font,
             size: 0.6,
-            height: 0.2,
+            height: 0.1,
             curveSegments: 5,
             bevelEnabled: true,
-            bevelThickness: 0.03,
-            bevelSize: 0.02,
+            bevelThickness: 0.05,
+            bevelSize: 0.05,
             bevelOffset: 0,
             bevelSegments: 4
         }
