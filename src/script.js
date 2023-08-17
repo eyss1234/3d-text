@@ -10,7 +10,8 @@ THREE.ColorManagement.enabled = false
  * Base
  */
 // Debug
-const gui = new dat.GUI()
+
+
 
 // Canvas
 const canvas = document.querySelector('canvas.webgl')
@@ -62,7 +63,7 @@ fontLoader.load(
       material.wireframe = false
       const text = new THREE.Mesh(textGeometry, material)
       scene.add(text)
-
+        
       // Creating donuts
       const donutGeometry = new THREE.TorusGeometry(0.3, 0.2, 20, 45)
 
@@ -81,6 +82,9 @@ fontLoader.load(
 
         scene.add(donut)    
       }
+      // debug
+      const gui = new dat.GUI() 
+        gui.add(material, 'wireframe')
         }
       )
 
@@ -122,9 +126,9 @@ window.addEventListener('resize', () =>
  */
 // Base camera
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
-camera.position.x = 1
-camera.position.y = 1
-camera.position.z = 2
+camera.position.x = 3
+camera.position.y = 3
+camera.position.z = 5
 scene.add(camera)
 
 // Controls
